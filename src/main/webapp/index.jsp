@@ -34,6 +34,15 @@ input[type='text'] {
 	font-size: 20px;
 	height: 50px;
 }
+
+.resultsTable1 {
+	text-align: center;
+}
+
+.resultsTable2 {
+	width: 700px;
+	display: inline-block;
+}
 </style>
 
 
@@ -71,22 +80,23 @@ input[type='text'] {
 
 
 					<fieldset class="form-group">
-						<input type="text" name="latitude" value="Autofill here" id="latitude" class="form-control"
-							placeholder="Latitude" required="required"
+						<input type="text" name="latitude" value="Autofill here"
+							id="latitude" class="form-control" placeholder="Latitude"
+							required="required"
 							onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" />
 					</fieldset>
 
 					<fieldset class="form-group">
-						<input type="text" name="longitude" value="Autofill here" id="longitude" class="form-control"
-							placeholder="Longitude" required="required"
+						<input type="text" name="longitude" value="Autofill here"
+							id="longitude" class="form-control" placeholder="Longitude"
+							required="required"
 							onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" />
 					</fieldset>
 
 					<fieldset class="form-group">
 
 
-						<label for="exampleFormControlSelect1">Select a city</label> 
-						<select
+						<label for="exampleFormControlSelect1">Select a city</label> <select
 							class="form-control" id="countrySelect">
 							<option>None</option>
 							<option value="NewYorkCity">New York City</option>
@@ -118,33 +128,37 @@ input[type='text'] {
 <div class="container">
 	<div class="jumbotron">
 
-		<h2 class="display-4">Results:</h2>
+		<div class="resultsTable1">
+			<div class="resultsTable2">
+
+				<h2 class="display-4">Results:</h2>
 
 
 
 
-		<table class="table table-striped">
-			<thead>
-				<tr>
-					<th>Distance</th>
-					<th>Location</th>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Distance</th>
+							<th>Location</th>
 
-				</tr>
-			</thead>
+						</tr>
+					</thead>
 
-			<tbody>
-				<c:forEach var="entry" items="${outputMap}">
-					<tr>
-						<td><fmt:formatNumber type="number" maxFractionDigits="1"
-								value="${entry.key}" /> KM</td>
-						<td><c:out value="${entry.value}" /></td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
+					<tbody>
+						<c:forEach var="entry" items="${outputMap}">
+							<tr>
+								<td><fmt:formatNumber type="number" maxFractionDigits="1"
+										value="${entry.key}" /> KM</td>
+								<td><c:out value="${entry.value}" /></td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
 
+			</div>
 
-
+		</div>
 
 
 	</div>
