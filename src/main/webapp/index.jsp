@@ -71,66 +71,30 @@ background-color:white;
 		<h2 class="display-4">Results:</h2>
 
 
-		<table>
-			<c:forEach var="entry" items="${outputMap}">
+
+
+		<table class="table table-striped">
+			<thead>
 				<tr>
-					<td><c:out value="${entry.key}" /></td>
-					<td><c:out value="${entry.value}" /></td>
+					<th>Distance</th>
+					<th>Location</th>
+
 				</tr>
-			</c:forEach>
+			</thead>
+
+			<tbody>
+				<c:forEach var="entry" items="${outputMap}">
+					<tr>
+						<td><fmt:formatNumber type="number" maxFractionDigits="1" value="${entry.key}"/> KM</td>
+						<td><c:out value="${entry.value}" /></td>
+					</tr>
+				</c:forEach>
+			</tbody>
 		</table>
 
 
 
-
-
-
-		<table class="table table-striped">
-
 	
-	
-	
-	
-				
-				<tbody>
-
-					<tr>
-						<td><p class="lead">1. Exemplary result lalalalalalalal</p></td>																																										
-					</tr>
-					<tr>
-						<td><p class="lead">2. Exemplary result lalalalalalalal</p></td>	
-					</tr>	
-					<tr>
-						<td><p class="lead">3. Exemplary result lalalalalalalal</p></td>	
-					</tr>						
-					<tr>
-						<td><p class="lead">4. Exemplary result lalalalalalalal</p></td>	
-					</tr>			
-					<tr>
-						<td><p class="lead">5. Exemplary result lalalalalalalal</p></td>	
-					</tr>
-					
-					<tr>
-						<td><p class="lead">6. Exemplary result lalalalalalalal</p></td>	
-					</tr>						
-					
-					<tr>
-						<td><p class="lead">7. Exemplary result lalalalalalalal</p></td>	
-					</tr>						
-					<tr>
-						<td><p class="lead">8. Exemplary result lalalalalalalal</p></td>	
-					</tr>						
-					
-					<tr>
-						<td><p class="lead">9. Exemplary result lalalalalalalal</p></td>	
-					</tr>						
-					<tr>
-						<td><p class="lead">10. Exemplary result lalalalalalalal</p></td>	
-					</tr>							
-
-				</tbody>
-
-			</table>
 
 	</div>
 </div>

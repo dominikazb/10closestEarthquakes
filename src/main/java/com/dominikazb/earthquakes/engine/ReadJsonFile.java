@@ -11,6 +11,7 @@ import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
+import com.dominikazb.earthquakes.servlets.ReadLongitudeAndLatitudeServlet;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ReadJsonFile {
@@ -19,7 +20,7 @@ public class ReadJsonFile {
 	private static String place;
 	private static double longitude;
 	private static double latitude;	
-	private Map<Integer, String> distanceAndPlaceMapForAllCities = new TreeMap<>();
+	private Map<Double, String> distanceAndPlaceMapForAllCities = new TreeMap<>();
 	private HarvesineFormula harvesine = new HarvesineFormula();
 	
 	public static ReadJsonFile getReadJson() {
@@ -28,7 +29,7 @@ public class ReadJsonFile {
 	
 
 	@SuppressWarnings("unchecked")
-	public void convertJsonToJavaObjects(double latitude2ndCity, double longitude2ndCity) throws IOException, JsonParseException {
+	public void convertJsonToJavaObjects() throws IOException, JsonParseException {
 		
 		ObjectMapper om = new ObjectMapper();				
 		om.configure(org.codehaus.jackson.map.DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false); //ignore fields that are not formatted properly
@@ -47,9 +48,11 @@ public class ReadJsonFile {
 				longitude = (double) coordinatesArrayList.get(0);
 				latitude = (double) coordinatesArrayList.get(1);
 				
-				Double distanceDOUBLE = calculateTheDistanceBetweenCities(latitude2ndCity, longitude2ndCity);
-				int distanceKMS = distanceDOUBLE.intValue();
-				distanceAndPlaceMapForAllCities.put(distanceKMS, place);
+	            double distanceBetweenTheCityAndAnEarthquakes = 
+	            		harvesine.haversine(ReadLongitudeAndLatitudeServlet.getLatitude(), 
+	            				ReadLongitudeAndLatitudeServlet.getLongitude(), latitude, longitude);
+
+				distanceAndPlaceMapForAllCities.put(distanceBetweenTheCityAndAnEarthquakes, place);
 				
 			} catch (ClassCastException | NullPointerException e) {
 				continue;
@@ -59,13 +62,8 @@ public class ReadJsonFile {
 		
 	}
 	
-
-	public double calculateTheDistanceBetweenCities(double latitude2ndCity, double longitude2ndCity) {		
-		return harvesine.haversine(latitude, longitude, latitude2ndCity, longitude2ndCity);		
-	}
-	
-	public TreeMap<Integer, String> read10closestCities() {
-	    TreeMap<Integer, String> first10resultsFromTheList = distanceAndPlaceMapForAllCities.entrySet().stream()
+	public TreeMap<Double, String> read10closestCities() {
+	    TreeMap<Double, String> first10resultsFromTheList = distanceAndPlaceMapForAllCities.entrySet().stream()
 	    	    .limit(10)
 	    	    .collect(TreeMap::new, (m, e) -> m.put(e.getKey(), e.getValue()), Map::putAll);	 
 	    return first10resultsFromTheList;

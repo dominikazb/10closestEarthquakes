@@ -13,18 +13,26 @@ import com.dominikazb.earthquakes.engine.ReadJsonFile;
 @WebServlet("/read")
 public class ReadLongitudeAndLatitudeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	
+	private static double longitude;
+	private static double latitude;
+
+	public static double getLongitude() {
+		return longitude;
+	}
+
+	public static double getLatitude() {
+		return latitude;
+	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 				
 		String longitudeString = request.getParameter("longitude");
 		String latitudeString = request.getParameter("latitude");		
-		double longitude = Double.parseDouble(longitudeString);
-		double latitude = Double.parseDouble(latitudeString);			
-		ReadJsonFile.getReadJson().convertJsonToJavaObjects(longitude, latitude);
-		ReadJsonFile.getReadJson().read10closestCities();
-		
+		longitude = Double.parseDouble(longitudeString);
+		latitude = Double.parseDouble(latitudeString);			
+		ReadJsonFile.getReadJson().convertJsonToJavaObjects();
 		response.sendRedirect("list");
 	}
 	

@@ -17,7 +17,7 @@ public class PrintEarthquakesServlet extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		TreeMap<Integer, String> outputMap = ReadJsonFile.getReadJson().read10closestCities();
+		TreeMap<Double, String> outputMap = ReadJsonFile.getReadJson().read10closestCities();
 		request.setAttribute("outputMap", outputMap);
 		
 		request.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
