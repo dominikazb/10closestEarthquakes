@@ -15,15 +15,20 @@ import org.codehaus.jackson.type.TypeReference;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ReadJsonFile {
 	
+	private static ReadJsonFile readJson = new ReadJsonFile();	
 	private static String place;
 	private static double longitude;
 	private static double latitude;	
-	private Map<Double, String> distanceAndPlaceMapForAllCities = new TreeMap<>();
+	private Map<Integer, String> distanceAndPlaceMapForAllCities = new TreeMap<>();
 	private HarvesineFormula harvesine = new HarvesineFormula();
-
 	
+	public static ReadJsonFile getReadJson() {
+		return readJson;
+	}
+	
+
 	@SuppressWarnings("unchecked")
-	public void convertJsonToJavaObjects() throws IOException, JsonParseException {
+	public void convertJsonToJavaObjects(double latitude2ndCity, double longitude2ndCity) throws IOException, JsonParseException {
 		
 		ObjectMapper om = new ObjectMapper();				
 		om.configure(org.codehaus.jackson.map.DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false); //ignore fields that are not formatted properly
@@ -42,34 +47,29 @@ public class ReadJsonFile {
 				longitude = (double) coordinatesArrayList.get(0);
 				latitude = (double) coordinatesArrayList.get(1);
 				
-				calculateTheDistanceBetweenCities();
-				distanceAndPlaceMapForAllCities.put(calculateTheDistanceBetweenCities(), place);
+				Double distanceDOUBLE = calculateTheDistanceBetweenCities(latitude2ndCity, longitude2ndCity);
+				int distanceKMS = distanceDOUBLE.intValue();
+				distanceAndPlaceMapForAllCities.put(distanceKMS, place);
 				
 			} catch (ClassCastException | NullPointerException e) {
 				continue;
 			}
 		}	
+
 		
 	}
 	
 
-	public double calculateTheDistanceBetweenCities() {		
-		return harvesine.haversine(latitude, longitude, -98.072868349999993, 36.043865199999999);		
+	public double calculateTheDistanceBetweenCities(double latitude2ndCity, double longitude2ndCity) {		
+		return harvesine.haversine(latitude, longitude, latitude2ndCity, longitude2ndCity);		
 	}
 	
-	public void read10closestCities() {
-	    TreeMap<Double, String> first10resultsFromTheList = distanceAndPlaceMapForAllCities.entrySet().stream()
+	public TreeMap<Integer, String> read10closestCities() {
+	    TreeMap<Integer, String> first10resultsFromTheList = distanceAndPlaceMapForAllCities.entrySet().stream()
 	    	    .limit(10)
-	    	    .collect(TreeMap::new, (m, e) -> m.put(e.getKey(), e.getValue()), Map::putAll);	    
-	    for (Map.Entry<Double, String> entry : first10resultsFromTheList.entrySet()) {
-	    	
-	    	int distanceKMS = entry.getKey().intValue();
-	    	System.out.println(distanceKMS + " KM  ||  " + entry.getValue());
-	    }
+	    	    .collect(TreeMap::new, (m, e) -> m.put(e.getKey(), e.getValue()), Map::putAll);	 
+	    return first10resultsFromTheList;
 	}
-	
-	
-	
-	
+
 	
 }

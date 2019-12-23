@@ -11,8 +11,24 @@
   	<servlet-name>ExplanationServlet</servlet-name>
   	<servlet-class>com.dominikazb.earthquakes.servlets.ExplanationServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>PrintEarthquakesServlet</servlet-name>
+  	<servlet-class>com.dominikazb.earthquakes.servlets.PrintEarthquakesServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ReadLongitudeAndLatitudeServlet</servlet-name>
+  	<servlet-class>com.dominikazb.earthquakes.servlets.ReadLongitudeAndLatitudeServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>ExplanationServlet</servlet-name>
   	<url-pattern>/ExplanationServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PrintEarthquakesServlet</servlet-name>
+  	<url-pattern>/PrintEarthquakesServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ReadLongitudeAndLatitudeServlet</servlet-name>
+  	<url-pattern>/ReadLongitudeAndLatitudeServlet</url-pattern>
   </servlet-mapping>
 </web-app>

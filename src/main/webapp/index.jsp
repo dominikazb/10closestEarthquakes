@@ -40,7 +40,7 @@ background-color:white;
 
 		<div class="jumbotron">
 
-			<form action="/create" method="post">
+			<form action="/read" method="post">
 
 				<fieldset class="form-group">			
 					<label>Longitude</label>
@@ -69,8 +69,27 @@ background-color:white;
 	<div class="jumbotron">
 
 		<h2 class="display-4">Results:</h2>
-			<table class="table table-striped">
 
+
+		<table>
+			<c:forEach var="entry" items="${outputMap}">
+				<tr>
+					<td><c:out value="${entry.key}" /></td>
+					<td><c:out value="${entry.value}" /></td>
+				</tr>
+			</c:forEach>
+		</table>
+
+
+
+
+
+
+		<table class="table table-striped">
+
+	
+	
+	
 	
 				
 				<tbody>
