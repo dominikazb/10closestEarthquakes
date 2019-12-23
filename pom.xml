@@ -8,6 +8,14 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>10closestEarthquakes Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+
+
+	<properties>
+		<tomcat.version>7.0.50</tomcat.version>
+
+	</properties>
+
+
 	<dependencies>
 
 		<dependency>
@@ -58,6 +66,22 @@
 			<version>1.9.1</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.9.10</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.13</version>
+		</dependency>
+
+
+
 	</dependencies>
 	<build>
 		<finalName>10closestEarthquakes</finalName>
@@ -83,6 +107,7 @@
 					<showWarnings>true</showWarnings>
 				</configuration>
 			</plugin>
+
 
 
 			<plugin>

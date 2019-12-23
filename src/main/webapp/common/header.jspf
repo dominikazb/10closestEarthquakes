@@ -9,7 +9,7 @@
 <head>
 <%@ page isELIgnored="false" %>
 <meta charset="UTF-8">
-<title>Todo list</title>
+<title>List of 10 closest earthquakes</title>
 <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 <style>
 .navbar {

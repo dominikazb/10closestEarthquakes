@@ -9,7 +9,7 @@
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
   	<servlet-name>ExplanationServlet</servlet-name>
-  	<servlet-class>com.dominikazb.earthquakes.ExplanationServlet</servlet-class>
+  	<servlet-class>com.dominikazb.earthquakes.servlets.ExplanationServlet</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>ExplanationServlet</servlet-name>
