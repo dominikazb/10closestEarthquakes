@@ -3,12 +3,37 @@
 <%@ include file="common/navigation.jspf"%>
 
 <style>
-
-.jumbotron{
-background-color:white;
+.jumbotron {
+	background-color: white;
 }
 
+.topCaption1 {
+	text-align: center;
+}
 
+.topCaption2 {
+	width: 600px;
+	display: inline-block;
+}
+
+.formDiv1 {
+	text-align: center;
+}
+
+.formDiv2 {
+	width: 400px;
+	display: inline-block;
+}
+
+input[type='text'] {
+	font-size: 20px;
+	height: 50px;
+}
+
+#submit-button {
+	font-size: 20px;
+	height: 50px;
+}
 </style>
 
 
@@ -18,53 +43,91 @@ background-color:white;
 <div class="container">
 	<div class="jumbotron">
 
-		<h1 class="display-4">List of 10 closest earthquakes (US)</h1>
-		<p class="lead">
-			Type in the <b>longitude</b> and the <b>latitude</b> of a chosen city
-			and get the list of <b>10 closest earthquakes</b>.
-		</p>
+		<div class="topCaption1">
+			<div class="topCaption2">
+				<p class="lead">Type in the latitude and the longitude of a
+					chosen city.</p>
+			</div>
+
+		</div>
+
 		<hr class="my-4">
-		<p>
-			<a class="btn btn-primary btn-lg" href="/explanation" role="button">Learn
-				more &raquo;</a>
-		</p>
+
 	</div>
 </div>
 
 
 
 
+<div class="container">
+
+	<div class="jumbotron">
+
+		<div class="formDiv1">
+			<div class="formDiv2">
+
+				<form action="/read" method="post">
+
+
+
+					<fieldset class="form-group">
+						<input type="text" name="latitude" class="form-control"
+							placeholder="Latitude" required="required"
+							onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" />
+					</fieldset>
+
+					<fieldset class="form-group">
+						<input type="text" name="longitude" class="form-control"
+							placeholder="Longitude" required="required"
+							onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" />
+					</fieldset>
+
+					<fieldset class="form-group">
+
+
+						<label for="exampleFormControlSelect1">Select a city</label> <select
+							class="form-control" id="exampleFormControlSelect1">
+							<option value="NewYorkCity">New York City</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+						</select>
+
+
+					</fieldset>
+
+					<br />
+
+					<button type="submit" class="btn btn-info my-4 btn-block"
+						id="submit-button">Submit</button>
+
+				</form>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
 
 
 <div class="container">
 
-		<div class="jumbotron">
+<select id="myselect">
+  <option value="Red">Rose</option>
+  <option value="Blue">Violet</option>
+</select>
 
-			<form action="/read" method="post">
+<input id="myinput" type="text" value="Autofill here" />
 
-				<fieldset class="form-group">			
-					<label>Longitude</label>
-					<input type="text" name="longitude" class="form-control" required="required"/>
+</div>
 
-				</fieldset>
-				
-				<fieldset class="form-group">			
-					<label>Latitude</label>
-					<input type="text" name="latitude" class="form-control" required="required"/>
-	
-				</fieldset>
-				
-				<br/>
 
-				<button type="submit" class="btn btn-success btn-lg">Submit</button>
-				<a class="btn btn-danger btn-lg" href="/list-todos" role="button">Cancel</a>
-				
-			</form>
-		</div>
-		
-		</div>
-		
-		
+
+
 <div class="container">
 	<div class="jumbotron">
 
@@ -85,7 +148,8 @@ background-color:white;
 			<tbody>
 				<c:forEach var="entry" items="${outputMap}">
 					<tr>
-						<td><fmt:formatNumber type="number" maxFractionDigits="1" value="${entry.key}"/> KM</td>
+						<td><fmt:formatNumber type="number" maxFractionDigits="1"
+								value="${entry.key}" /> KM</td>
 						<td><c:out value="${entry.value}" /></td>
 					</tr>
 				</c:forEach>
@@ -94,7 +158,7 @@ background-color:white;
 
 
 
-	
+
 
 	</div>
 </div>

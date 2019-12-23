@@ -1,14 +1,36 @@
-	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
-	<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script>
+
+$('#myselect').on('change', function(){
+	  $('#myinput').val($(this).val());
+	})
+
+	// init
+	$('#myselect').change();
+
+
+
+</script>
+
+
+
 
 
 </body>
 
- 
-      
+
+
 <footer class="container">
-<hr>
-  <p>&copy; Created by dominikazb</p>
+	<hr>
+	<p>
+		&copy; Created by <a href="http://dominikazb.com">dominikazb</a>
+	</p>
 </footer>
 
 </html>
