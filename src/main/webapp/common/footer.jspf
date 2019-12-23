@@ -6,16 +6,22 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <script>
-
 $('#myselect').on('change', function(){
 	  $('#myinput').val($(this).val());
 	})
 
 	// init
 	$('#myselect').change();
+</script>
 
+<script>
 
+$('#countrySelect').on('change', function(){
+	  $('#latitude').val($(this).val());
+	  $('#longitude').val($(this).val());
+	})
 
+	$('#countrySelect').change();
 </script>
 
 

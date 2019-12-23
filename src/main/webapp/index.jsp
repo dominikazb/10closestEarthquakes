@@ -71,13 +71,13 @@ input[type='text'] {
 
 
 					<fieldset class="form-group">
-						<input type="text" name="latitude" class="form-control"
+						<input type="text" name="latitude" value="Autofill here" id="latitude" class="form-control"
 							placeholder="Latitude" required="required"
 							onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" />
 					</fieldset>
 
 					<fieldset class="form-group">
-						<input type="text" name="longitude" class="form-control"
+						<input type="text" name="longitude" value="Autofill here" id="longitude" class="form-control"
 							placeholder="Longitude" required="required"
 							onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" />
 					</fieldset>
@@ -85,11 +85,13 @@ input[type='text'] {
 					<fieldset class="form-group">
 
 
-						<label for="exampleFormControlSelect1">Select a city</label> <select
-							class="form-control" id="exampleFormControlSelect1">
+						<label for="exampleFormControlSelect1">Select a city</label> 
+						<select
+							class="form-control" id="countrySelect">
+							<option>None</option>
 							<option value="NewYorkCity">New York City</option>
-							<option>2</option>
-							<option>3</option>
+							<option value="Seattle">Seattle</option>
+							<option value="Washington D.C.">3</option>
 							<option>4</option>
 							<option>5</option>
 						</select>
@@ -111,21 +113,6 @@ input[type='text'] {
 	</div>
 
 </div>
-
-
-
-<div class="container">
-
-<select id="myselect">
-  <option value="Red">Rose</option>
-  <option value="Blue">Violet</option>
-</select>
-
-<input id="myinput" type="text" value="Autofill here" />
-
-</div>
-
-
 
 
 <div class="container">
