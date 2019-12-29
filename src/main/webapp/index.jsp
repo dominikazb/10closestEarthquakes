@@ -2,41 +2,24 @@
 <%@ include file="common/header.jspf"%>
 <%@ include file="common/navigation.jspf"%>
 
-
-
-
-
-
-
 <div class="container">
 	<div class="jumbotron">
-
 		<div class="topCaption1">
 			<div class="topCaption2">
 				<p class="lead">Type in the latitude and the longitude of a
 					chosen city.</p>
 			</div>
-
 		</div>
-
 		<hr class="my-4">
-
 	</div>
 </div>
 
 
-
-
 <div class="container">
-
 	<div class="jumbotron">
-
 		<div class="formDiv1">
 			<div class="formDiv2">
-
 				<form action="/read" method="post">
-
-
 					<label>Latitude</label> 
 					<fieldset class="form-group">
 						<input type="text" 
@@ -48,7 +31,8 @@
 						oninvalid="this.setCustomValidity('Type in latitude in a format 00.000')"
      					onchange="try{setCustomValidity('')}catch(e){}"
     					oninput="setCustomValidity(' ')"
-						required="required" pattern="^[-]?(\d+|\d*\.\d+)$" />
+						required="required" 
+						pattern="^[-]?(\d+|\d*\.\d+)$" />
 					</fieldset>
 					
 					<label>Longitude</label> 
@@ -66,8 +50,8 @@
 					</fieldset>
 					
 					<fieldset class="form-group">
-					<label>Select a city</label> <select
-						class="form-control" id="countrySelect">
+					<label>Select a city</label> 
+					<select class="form-control" id="countrySelect">
 						<option>None</option>
 						<option value="35.084385_-106.650421">Albuquerque</option>								
 						<option value="33.748997_-84.387985">Atlanta</option>
@@ -105,24 +89,17 @@
 
 					<button type="submit" class="btn btn-info my-4 btn-block"
 						id="submit-button">Submit</button>
-
 				</form>
-
 			</div>
-
 		</div>
-
 	</div>
-
 </div>
 
 
 <div class="container">
 	<div class="jumbotron">
-
 		<div class="resultsTable1">
 			<div class="resultsTable2">
-
 				<table class="table table-striped">
 					<thead>
 						<tr>
@@ -142,18 +119,10 @@
 						</c:forEach>
 					</tbody>
 				</table>
-
 			</div>
-
 		</div>
-
-
 	</div>
 </div>
-
-
-
-
 
 
 <%@ include file="common/footer.jspf"%>

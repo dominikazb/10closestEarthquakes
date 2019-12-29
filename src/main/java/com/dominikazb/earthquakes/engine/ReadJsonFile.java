@@ -55,9 +55,7 @@ public class ReadJsonFile {
 			} catch (ClassCastException | NullPointerException e) {
 				continue;
 			}
-		}	
-
-		
+		}			
 	}
 	
 	public TreeMap<Double, String> read10closestCities() {
@@ -66,6 +64,4 @@ public class ReadJsonFile {
 	    	    .collect(TreeMap::new, (m, e) -> m.put(e.getKey(), e.getValue()), Map::putAll);	 
 	    return first10resultsFromTheList;
 	}
-
-	
 }

@@ -1,12 +1,7 @@
-
 <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
 <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	
 <script>
 $('#countrySelect').on('change', function () {
     var val = this.value;
@@ -16,14 +11,7 @@ $('#countrySelect').on('change', function () {
 });
 </script>
 
-
-
-
-
-
 </body>
-
-
 
 <footer class="container">
 	<hr>
