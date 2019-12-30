@@ -2,6 +2,7 @@
 <%@ include file="common/header.jspf"%>
 <%@ include file="common/navigation.jspf"%>
 
+
 <div class="container">
 	<div class="jumbotron">
 		<div class="topCaption1">
@@ -14,7 +15,6 @@
 	</div>
 </div>
 
-
 <div class="container">
 	<div class="jumbotron">
 		<div class="formDiv1">
@@ -26,7 +26,6 @@
 						name="latitude" 
 						id="latitude" 
 						class="form-control" 
-						placeholder="Latitude"
 						required="required"
 						oninvalid="this.setCustomValidity('Type in latitude in a format 00.000')"
      					onchange="try{setCustomValidity('')}catch(e){}"
@@ -41,7 +40,6 @@
 						name="longitude" 
 						id="longitude" 
 						class="form-control" 
-						placeholder="Longitude"
 						oninvalid="this.setCustomValidity('Type in longitude in a format 00.000')"
      					onchange="try{setCustomValidity('')}catch(e){}"
     					oninput="setCustomValidity(' ')"			
@@ -123,6 +121,7 @@
 		</div>
 	</div>
 </div>
+
 
 
 <%@ include file="common/footer.jspf"%>

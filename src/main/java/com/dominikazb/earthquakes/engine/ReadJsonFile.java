@@ -62,6 +62,12 @@ public class ReadJsonFile {
 	    TreeMap<Double, String> first10resultsFromTheList = distanceAndPlaceMapForAllCities.entrySet().stream()
 	    	    .limit(10)
 	    	    .collect(TreeMap::new, (m, e) -> m.put(e.getKey(), e.getValue()), Map::putAll);	 
+
+	    System.out.println("*******************************************");
+	    for(Map.Entry<Double, String> entry : first10resultsFromTheList.entrySet()) {
+	    	System.out.println(entry.getKey() + " || " + entry.getValue());
+	    }
+	    System.out.println("*******************************************");
 	    return first10resultsFromTheList;
 	}
 }

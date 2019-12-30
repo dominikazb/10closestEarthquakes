@@ -20,8 +20,9 @@ public class ReadLongitudeAndLatitudeServlet extends HttpServlet {
 		String longitudeString = request.getParameter("longitude");
 		double latitude = Double.parseDouble(latitudeString);
 		double longitude = Double.parseDouble(longitudeString);
+		request.setAttribute("latitude", latitude);
+		request.setAttribute("longitude", longitude);
 		ReadJsonFile.getReadJson().convertJsonToJavaObjects(latitude, longitude);
 		response.sendRedirect("list");
 	}
-
 }
