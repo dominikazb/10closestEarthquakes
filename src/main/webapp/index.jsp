@@ -23,8 +23,8 @@
 					<label>Latitude</label> 
 					<fieldset class="form-group">
 						<input type="text" 
-						name="latitude" 
-						id="latitude" 
+						name="latitudeOfSearchedCity" 
+						id="latitudeOfSearchedCity" 
 						class="form-control" 
 						required="required"
 						oninvalid="this.setCustomValidity('Type in latitude in a format 00.000')"
@@ -37,8 +37,8 @@
 					<label>Longitude</label> 
 					<fieldset class="form-group">
 						<input type="text" 
-						name="longitude" 
-						id="longitude" 
+						name="longitudeOfSearchedCity" 
+						id="longitudeOfSearchedCity" 
 						class="form-control" 
 						oninvalid="this.setCustomValidity('Type in longitude in a format 00.000')"
      					onchange="try{setCustomValidity('')}catch(e){}"

@@ -28,7 +28,7 @@ public class ReadJsonFile {
 	
 
 	@SuppressWarnings("unchecked")
-	public void convertJsonToJavaObjects(double latitude2ndCity, double longitude2ndCity) throws IOException, JsonParseException {
+	public void convertJsonToJavaObjects(double latitudeOfSearchedCity, double longitudeOfSearchedCity) throws IOException, JsonParseException {
 		
 		ObjectMapper om = new ObjectMapper();				
 		om.configure(org.codehaus.jackson.map.DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false); //ignore fields that are not formatted properly
@@ -48,7 +48,7 @@ public class ReadJsonFile {
 				latitude = (double) coordinatesArrayList.get(1);
 				
 	            double distanceBetweenTheCityAndAnEarthquakes = 
-	            		harvesine.haversine(latitude2ndCity, longitude2ndCity, latitude, longitude);
+	            		harvesine.haversine(latitudeOfSearchedCity, longitudeOfSearchedCity, latitude, longitude);
 
 				distanceAndPlaceMapForAllCities.put(distanceBetweenTheCityAndAnEarthquakes, place);
 				

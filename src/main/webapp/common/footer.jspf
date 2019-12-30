@@ -6,8 +6,8 @@
 $('#countrySelect').on('change', function () {
     var val = this.value;
     var parts = val.split("_");
-    $('#latitude').val(parts[0]);
-    $('#longitude').val(parts[1]);
+    $('#latitudeOfSearchedCity').val(parts[0]);
+    $('#longitudeOfSearchedCity').val(parts[1]);
 });
 </script>
 
