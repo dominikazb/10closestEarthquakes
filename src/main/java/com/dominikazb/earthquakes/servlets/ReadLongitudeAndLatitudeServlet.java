@@ -15,11 +15,10 @@ public class ReadLongitudeAndLatitudeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String latitudeOfSearchedCityString = request.getParameter("latitudeOfSearchedCity");
-		String longitudeOfSearchedCityString = request.getParameter("longitudeOfSearchedCity");
-		System.out.println("LatitudeString: " + latitudeOfSearchedCityString);
-		System.out.println("LongitudeString: " + longitudeOfSearchedCityString);
+		String latitudeOfSearchedCityString = (String)request.getParameter("latitudeOfSearchedCity");
+		String longitudeOfSearchedCityString = (String)request.getParameter("longitudeOfSearchedCity");
 		ReadJsonFile.getReadJson().convertJsonToJavaObjects(latitudeOfSearchedCityString, longitudeOfSearchedCityString);
+		//request.getRequestDispatcher("list").forward(request, response);
 		response.sendRedirect("list");
 	}
 	
