@@ -1,20 +1,3 @@
-
-<%@ include file="common/header.jspf"%>
-<%@ include file="common/navigation.jspf"%>
-
-
-<div class="container">
-	<div class="jumbotron">
-		<div class="topCaption1">
-			<div class="topCaption2">
-				<p class="lead">Type in the latitude and the longitude of a
-					chosen city.</p>
-			</div>
-		</div>
-		<hr class="my-4">
-	</div>
-</div>
-
 <div class="container">
 	<div class="jumbotron">
 		<div class="formDiv1">
@@ -26,12 +9,11 @@
 						name="latitudeOfSearchedCity" 
 						id="latitudeOfSearchedCity" 
 						class="form-control" 
-						required="required"
 						oninvalid="this.setCustomValidity('Type in latitude in a format 00.000')"
      					onchange="try{setCustomValidity('')}catch(e){}"
     					oninput="setCustomValidity(' ')"
-						required="required" 
-						pattern="^[-]?(\d+|\d*\.\d+)$" />
+						pattern="^[-]?(\d+|\d*\.\d+)$"
+						required="required" />
 					</fieldset>
 					
 					<label>Longitude</label> 
@@ -43,8 +25,8 @@
 						oninvalid="this.setCustomValidity('Type in longitude in a format 00.000')"
      					onchange="try{setCustomValidity('')}catch(e){}"
     					oninput="setCustomValidity(' ')"			
-						required="required" 
-						pattern="^[-]?(\d+|\d*\.\d+)$" />
+						pattern="^[-]?(\d+|\d*\.\d+)$" 
+						required="required" />
 					</fieldset>
 					
 					<fieldset class="form-group">
@@ -85,43 +67,9 @@
 
 					<br />
 
-					<button type="submit" class="btn btn-info my-4 btn-block"
-						id="submit-button">Submit</button>
+					<button type="submit" class="btn btn-info my-4 btn-block">Submit</button>
 				</form>
 			</div>
 		</div>
 	</div>
 </div>
-
-
-<div class="container">
-	<div class="jumbotron">
-		<div class="resultsTable1">
-			<div class="resultsTable2">
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th>Distance</th>
-							<th>Location</th>
-
-						</tr>
-					</thead>
-
-					<tbody>
-						<c:forEach var="entry" items="${outputMap}">
-							<tr>
-								<td><fmt:formatNumber type="number" maxFractionDigits="1"
-										value="${entry.key}" /> KM</td>
-								<td><c:out value="${entry.value}" /></td>
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-
-<%@ include file="common/footer.jspf"%>
