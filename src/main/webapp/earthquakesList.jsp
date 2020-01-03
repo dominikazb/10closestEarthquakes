@@ -34,7 +34,7 @@
 					</thead>
 
 					<tbody>
-						<c:forEach items="${outputMap}" var="entry">
+						<c:forEach items="${first10resultsFromTheList}" var="entry">
 							<tr>
 								<td><fmt:formatNumber type="number" maxFractionDigits="1"
 										value="${entry.key}" /> KM</td>

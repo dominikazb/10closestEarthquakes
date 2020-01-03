@@ -5,6 +5,9 @@
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
+  <welcome-file-list>
+  	<welcome-file>earthquakesList</welcome-file>
+  </welcome-file-list>
 
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
@@ -15,6 +18,14 @@
   	<servlet-name>ReadLongitudeAndLatitudeServlet</servlet-name>
   	<servlet-class>com.dominikazb.earthquakes.servlets.ReadLongitudeAndLatitudeServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>PrintEarthquakesListServlet</servlet-name>
+  	<servlet-class>com.dominikazb.earthquakes.servlets.PrintEarthquakesListServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>LoadJSonDataServlet</servlet-name>
+  	<servlet-class>com.dominikazb.earthquakes.servlets.LoadJSonDataServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>ExplanationServlet</servlet-name>
   	<url-pattern>/ExplanationServlet</url-pattern>
@@ -23,9 +34,15 @@
   	<servlet-name>ReadLongitudeAndLatitudeServlet</servlet-name>
   	<url-pattern>/ReadLongitudeAndLatitudeServlet</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PrintEarthquakesListServlet</servlet-name>
+  	<url-pattern>/PrintEarthquakesListServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LoadJSonDataServlet</servlet-name>
+  	<url-pattern>/earthquakesList</url-pattern>
+  </servlet-mapping>
   
-  <welcome-file-list>
-  	<welcome-file>earthquakesList.jsp</welcome-file>
-  </welcome-file-list>
+
   
 </web-app>
