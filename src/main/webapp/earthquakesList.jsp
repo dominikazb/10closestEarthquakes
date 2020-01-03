@@ -1,8 +1,5 @@
-
 <%@ include file="common/header.jspf"%>
 <%@ include file="common/navigation.jspf"%>
-
-
 
 <div class="container">
 	<div class="jumbotron">
@@ -14,8 +11,6 @@
 		<hr class="my-4">
 	</div>
 </div>
-
-
 
 
 <div class="container">
@@ -33,6 +28,7 @@
 
 						</tr>
 					</thead>
+
 
 					<tbody>
 						<c:forEach items="${first10resultsFromTheList}" var="entry">

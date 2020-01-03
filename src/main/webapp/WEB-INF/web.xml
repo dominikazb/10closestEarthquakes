@@ -8,6 +8,8 @@
   	<welcome-file>index</welcome-file>
   </welcome-file-list>
 
+
+
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
   	<servlet-name>ExplanationServlet</servlet-name>

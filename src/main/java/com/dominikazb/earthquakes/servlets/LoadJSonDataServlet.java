@@ -13,7 +13,7 @@ import com.dominikazb.earthquakes.engine.ReadJsonFile;
 public class LoadJSonDataServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
-	protected ReadJsonFile readJson = new ReadJsonFile();     
+	protected ReadJsonFile readJson = new ReadJsonFile();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 		HttpSession session = request.getSession();
