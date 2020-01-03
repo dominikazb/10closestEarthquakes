@@ -1,7 +1,6 @@
 package com.dominikazb.earthquakes.servlets;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -18,11 +17,8 @@ public class LoadJSonDataServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 		HttpSession session = request.getSession();
-		//Map<String, Coordinates> coordinatesNamesMap = new HashMap<>();
-		Map<String,Coordinates> coordinatesNamesMap = new HashMap<>();
-		coordinatesNamesMap = readJson.readJSonAndConvertToJavaObjects();
+		Map<String,Coordinates> coordinatesNamesMap = readJson.readJSonAndConvertToJavaObjects();
 		session.setAttribute("coordinatesNamesMap", coordinatesNamesMap);
-		System.out.println("This is only read once");
-		request.getRequestDispatcher("/earthquakesList.jsp").forward(request, response);
+		request.getRequestDispatcher("/index.jsp").forward(request, response);
 	}
 }

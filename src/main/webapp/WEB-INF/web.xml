@@ -5,7 +5,7 @@
          version="3.1">
 
   <welcome-file-list>
-  	<welcome-file>earthquakesList</welcome-file>
+  	<welcome-file>index</welcome-file>
   </welcome-file-list>
 
   <display-name>Archetype Created Web Application</display-name>
@@ -39,7 +39,7 @@
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>LoadJSonDataServlet</servlet-name>
-  	<url-pattern>/earthquakesList</url-pattern>
+  	<url-pattern>/index</url-pattern>
   </servlet-mapping>
   
 </web-app>

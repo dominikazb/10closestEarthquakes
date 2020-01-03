@@ -14,12 +14,11 @@ import org.codehaus.jackson.type.TypeReference;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ReadJsonFile {
 	
-	private Map<String, Coordinates> coordinatesNameMap = new HashMap<>();
+	private Map<String, Coordinates> coordinatesNamesMap = new HashMap<>();
 
 	@SuppressWarnings("unchecked")
 	public Map<String, Coordinates> readJSonAndConvertToJavaObjects() throws IOException, JsonParseException {
 		
-		coordinatesNameMap = new HashMap<>();
 		ObjectMapper om = new ObjectMapper();				
 		om.configure(org.codehaus.jackson.map.DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false); //ignore fields that are not formatted properly
 		TypeReference<HashMap<Object,Object>> typeRef = new TypeReference<HashMap<Object,Object>>() {};
@@ -35,12 +34,12 @@ public class ReadJsonFile {
 				ArrayList<Object> coordinatesArrayList = (ArrayList<Object>) geometryMap.get("coordinates");			
 				double longitude = (double) coordinatesArrayList.get(0);
 				double latitude = (double) coordinatesArrayList.get(1);			
-				coordinatesNameMap.put(place, new Coordinates(latitude, longitude));
+				coordinatesNamesMap.put(place, new Coordinates(latitude, longitude));
 			} catch (ClassCastException | NullPointerException e) {
 				continue;
 			}
 		}	
 		
-		return coordinatesNameMap;
+		return coordinatesNamesMap;
 	}
 }

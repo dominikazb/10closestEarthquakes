@@ -39,7 +39,15 @@
     	align-items: center;
     	margin-top:-80px;
 	}
+	
+	.indexDiv {
+		text-align:center;
+	}
 
+	.indexDiv2 {
+		width: 400px;
+		display: inline-block;
+	}
 
 	
 	input[type='text'] {
