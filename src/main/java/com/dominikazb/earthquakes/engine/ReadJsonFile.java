@@ -14,22 +14,17 @@ import org.codehaus.jackson.type.TypeReference;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ReadJsonFile {
-	
-	private static ReadJsonFile readJson = new ReadJsonFile();	
-	private static String place;
-	private static double longitude;
-	private static double latitude;	
+
+	private String place;
+	private double longitude;
+	private double latitude;	
 	private Map<Double, String> distanceAndPlaceMapForAllCities = new TreeMap<>();
 	private HarvesineFormula harvesine = new HarvesineFormula();
-	
-	public static ReadJsonFile getReadJson() {
-		return readJson;
-	}
-	
 
 	@SuppressWarnings("unchecked")
 	public void convertJsonToJavaObjects(String latitudeOfSearchedCity, String longitudeOfSearchedCity) throws IOException, JsonParseException {
 		
+		distanceAndPlaceMapForAllCities = new TreeMap<>();
 		ObjectMapper om = new ObjectMapper();				
 		om.configure(org.codehaus.jackson.map.DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false); //ignore fields that are not formatted properly
 		TypeReference<HashMap<Object,Object>> typeRef = new TypeReference<HashMap<Object,Object>>() {};
