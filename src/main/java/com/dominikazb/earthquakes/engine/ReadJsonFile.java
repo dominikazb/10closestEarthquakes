@@ -13,11 +13,13 @@ import org.codehaus.jackson.type.TypeReference;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ReadJsonFile {
+	
+	private Map<String, Coordinates> coordinatesNameMap = new HashMap<>();
 
 	@SuppressWarnings("unchecked")
 	public Map<String, Coordinates> readJSonAndConvertToJavaObjects() throws IOException, JsonParseException {
 		
-		Map<String, Coordinates> coordinatesNameMap = new HashMap<>();
+		coordinatesNameMap = new HashMap<>();
 		ObjectMapper om = new ObjectMapper();				
 		om.configure(org.codehaus.jackson.map.DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false); //ignore fields that are not formatted properly
 		TypeReference<HashMap<Object,Object>> typeRef = new TypeReference<HashMap<Object,Object>>() {};

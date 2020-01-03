@@ -8,8 +8,7 @@
 	<div class="jumbotron">
 		<div class="topCaption1">
 			<div class="topCaption2">
-				<p class="lead">Type in the latitude and the longitude of a
-					chosen city.</p>
+				<h4>Type in the latitude and the longitude of a chosen city.</h4>
 			</div>
 		</div>
 		<hr class="my-4">
@@ -17,13 +16,15 @@
 </div>
 
 
-<jsp:include page="latLongForm.jsp" />
 
 
 <div class="container">
 	<div class="jumbotron">
-		<div class="resultsTable1">
-			<div class="resultsTable2">
+		<div class="row vertical-align">
+			<div class="col-xs-6">
+				<jsp:include page="latLongForm.jsp" />
+			</div>
+			<div class="col-xs-6">
 				<table class="table table-striped">
 					<thead>
 						<tr>
@@ -47,7 +48,5 @@
 		</div>
 	</div>
 </div>
-
-
 
 <%@ include file="common/footer.jspf"%>
