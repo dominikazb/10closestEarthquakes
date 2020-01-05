@@ -12,8 +12,6 @@
 	</div>
 </div>
 
-Why this does not work??
-
 
 <div class="container">
 	<div class="jumbotron">
