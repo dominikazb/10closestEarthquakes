@@ -23,6 +23,7 @@ public class LoadJSonDataServlet extends HttpServlet {
 			ReadJsonFile readJson = new ReadJsonFile();
 			Map<String,Coordinates> coordinatesNamesMap2 = readJson.readJSonAndConvertToJavaObjects();
 			session.setAttribute("coordinatesNamesMap", coordinatesNamesMap2);		
+			//comment
 		}
 		session.setAttribute("coordinatesNamesMap", coordinatesNamesMap);
 		request.getRequestDispatcher("/earthquakesList.jsp").forward(request, response);
