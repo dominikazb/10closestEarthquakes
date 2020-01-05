@@ -16,8 +16,6 @@
 </div>
 
 
-xxx
-
 <div class="container">
 	<div class="jumbotron">
 		<div class="indexDiv">
