@@ -19,6 +19,6 @@ public class LoadJSonDataServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		Map<Coordinates,String> coordinatesNamesMap = readJson.readJSonAndConvertToJavaObjects();
 		session.setAttribute("coordinatesNamesMap", coordinatesNamesMap);
-		request.getRequestDispatcher("/index.jsp").forward(request, response);
+		request.getRequestDispatcher("/earthquakesList.jsp").forward(request, response);
 	}
 }

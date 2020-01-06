@@ -5,7 +5,7 @@
          version="3.1">
 
   <welcome-file-list>
-  	<welcome-file>index</welcome-file>
+  	<welcome-file>earthquakesList</welcome-file>
   </welcome-file-list>
 
 
@@ -41,7 +41,7 @@
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>LoadJSonDataServlet</servlet-name>
-  	<url-pattern>/index</url-pattern>
+  	<url-pattern>/earthquakesList</url-pattern>
   </servlet-mapping>
   
 </web-app>
