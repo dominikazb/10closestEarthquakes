@@ -4,8 +4,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -14,10 +18,10 @@ import org.codehaus.jackson.type.TypeReference;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ReadJsonFile {
 	
-	private Map<String, Coordinates> coordinatesNamesMap = new HashMap<>();
+	private Map<Coordinates, String> coordinatesNamesMap = new HashMap<>();
 
 	@SuppressWarnings("unchecked")
-	public Map<String, Coordinates> readJSonAndConvertToJavaObjects() throws IOException, JsonParseException {
+	public Map<Coordinates, String> readJSonAndConvertToJavaObjects() throws IOException, JsonParseException {
 		
 		ObjectMapper om = new ObjectMapper();				
 		om.configure(org.codehaus.jackson.map.DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false); //ignore fields that are not formatted properly
@@ -34,11 +38,18 @@ public class ReadJsonFile {
 				ArrayList<Object> coordinatesArrayList = (ArrayList<Object>) geometryMap.get("coordinates");			
 				double longitude = (double) coordinatesArrayList.get(0);
 				double latitude = (double) coordinatesArrayList.get(1);			
-				coordinatesNamesMap.put(place, new Coordinates(latitude, longitude));
+				coordinatesNamesMap.put(new Coordinates(latitude, longitude), place);
 			} catch (ClassCastException | NullPointerException e) {
 				continue;
 			}
-		}	
+		}
+		
+		//getting rid of duplicates
+		Set<String> existing = new HashSet<>();
+		coordinatesNamesMap = coordinatesNamesMap.entrySet()
+		    .stream()
+		    .filter(entry -> existing.add(entry.getValue()))
+		    .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
 		
 		return coordinatesNamesMap;
 	}
