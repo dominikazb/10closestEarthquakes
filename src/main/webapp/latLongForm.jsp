@@ -3,20 +3,18 @@
 	<fieldset class="form-group">
 		<input type="text" name="latitudeOfSearchedCity"
 			id="latitudeOfSearchedCity" class="form-control"
-			oninvalid="this.setCustomValidity('Type in latitude in a format 00.000')"
-			onchange="try{setCustomValidity('')}catch(e){}"
-			oninput="setCustomValidity(' ')" pattern="^[-]?(\d+|\d*\.\d+)$"
-			required="required" />
+			pattern="^[-]?(\d+|\d*\.\d+)$"
+			title="00.0000000"
+			required />
 	</fieldset>
 
 	<label>Longitude</label>
 	<fieldset class="form-group">
 		<input type="text" name="longitudeOfSearchedCity"
 			id="longitudeOfSearchedCity" class="form-control"
-			oninvalid="this.setCustomValidity('Type in longitude in a format 00.000')"
-			onchange="try{setCustomValidity('')}catch(e){}"
-			oninput="setCustomValidity(' ')" pattern="^[-]?(\d+|\d*\.\d+)$"
-			required="required" />
+			pattern="^[-]?(\d+|\d*\.\d+)$"
+			title="00.0000000"
+			required />
 	</fieldset>
 
 	<fieldset class="form-group">
@@ -57,4 +55,3 @@
 	<br />
 	<button type="submit" class="btn btn-info my-4 btn-block">Submit</button>
 </form>
-
