@@ -1,7 +1,6 @@
 package com.dominikazb.earthquakes.servlets;
 
 import java.io.IOException;
-import java.util.Map;
 import java.util.TreeMap;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,12 +20,12 @@ public class PrintEarthquakesListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		PrintListOf10ClosestEarthquakes printList = new PrintListOf10ClosestEarthquakes();
+		TreeMap<Coordinates,String> coordinatesNamesMap = (TreeMap<Coordinates,String>) getServletContext().getAttribute("coordinatesNamesMap");
         HttpSession session = request.getSession(false); 
-        TreeMap<Coordinates, String> coordinatesNamesMap = (TreeMap<Coordinates, String>) session.getAttribute("coordinatesNamesMap");
         String latitude = session.getAttribute("latitudeOfSearchedCityString").toString();
         String longitude = session.getAttribute("longitudeOfSearchedCityString").toString();
         TreeMap<Double, String> first10resultsFromTheList = (TreeMap<Double, String>) printList.print10closestEarthquakes(coordinatesNamesMap, 
-        		latitude, longitude);     
+        		latitude, longitude);    
         request.setAttribute("first10resultsFromTheList", first10resultsFromTheList);
 		request.getRequestDispatcher("/earthquakesList.jsp").forward(request, response);
 	}
