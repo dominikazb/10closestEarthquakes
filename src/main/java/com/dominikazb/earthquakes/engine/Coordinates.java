@@ -1,8 +1,9 @@
 package com.dominikazb.earthquakes.engine;
 
 import java.io.Serializable;
+import java.util.Comparator;
 
-public class Coordinates implements Serializable {
+public class Coordinates implements Serializable, Comparable<Coordinates> {
 	
 
 	private static final long serialVersionUID = 1L;
@@ -31,5 +32,12 @@ public class Coordinates implements Serializable {
 	public void setLongitude(double longitude) {
 		this.longitude = longitude;
 	}
+	
+    @Override
+    public int compareTo(Coordinates o){
+        return Comparator.comparing(Coordinates::getLatitude)
+                .thenComparing(Coordinates::getLongitude)
+                .compare(this, o);
+    }
 	
 }

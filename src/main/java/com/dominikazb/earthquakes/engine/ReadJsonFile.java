@@ -8,6 +8,7 @@ import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 import org.codehaus.jackson.JsonParseException;
@@ -19,6 +20,7 @@ import org.codehaus.jackson.type.TypeReference;
 public class ReadJsonFile {
 	
 	private Map<Coordinates, String> coordinatesNamesMap = new HashMap<>();
+	TreeMap<Coordinates, String> coordinatesNamesMapWithoutDuplicates = new TreeMap<>();
 
 	@SuppressWarnings("unchecked")
 	public Map<Coordinates, String> readJSonAndConvertToJavaObjects() throws IOException, JsonParseException {
@@ -45,12 +47,8 @@ public class ReadJsonFile {
 		}
 		
 		//getting rid of duplicates
-		Set<String> existing = new HashSet<>();
-		coordinatesNamesMap = coordinatesNamesMap.entrySet()
-		    .stream()
-		    .filter(entry -> existing.add(entry.getValue()))
-		    .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
-		
-		return coordinatesNamesMap;
+		coordinatesNamesMapWithoutDuplicates.putAll(coordinatesNamesMap);
+
+		return coordinatesNamesMapWithoutDuplicates;
 	}
 }
