@@ -22,7 +22,7 @@ public class PrintEarthquakesListServlet extends HttpServlet {
 		
 		PrintListOf10ClosestEarthquakes printList = new PrintListOf10ClosestEarthquakes();
         HttpSession session = request.getSession(false); 
-        Map<Coordinates, String> coordinatesNamesMap = (Map<Coordinates, String>) session.getAttribute("coordinatesNamesMap");
+        TreeMap<Coordinates, String> coordinatesNamesMap = (TreeMap<Coordinates, String>) session.getAttribute("coordinatesNamesMap");
         String latitude = session.getAttribute("latitudeOfSearchedCityString").toString();
         String longitude = session.getAttribute("longitudeOfSearchedCityString").toString();
         TreeMap<Double, String> first10resultsFromTheList = (TreeMap<Double, String>) printList.print10closestEarthquakes(coordinatesNamesMap, 
