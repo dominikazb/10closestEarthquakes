@@ -2,6 +2,8 @@ package com.dominikazb.earthquakes.servlets;
 
 import java.io.IOException;
 import java.util.Map;
+import java.util.TreeMap;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +19,8 @@ public class LoadJSonDataServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 		HttpSession session = request.getSession();
-		Map<Coordinates,String> coordinatesNamesMap = readJson.readJSonAndConvertToJavaObjects();
+		TreeMap<Coordinates,String> coordinatesNamesMap = readJson.readJSonAndConvertToJavaObjects();
+
 		session.setAttribute("coordinatesNamesMap", coordinatesNamesMap);
 		request.getRequestDispatcher("/earthquakesList.jsp").forward(request, response);
 	}

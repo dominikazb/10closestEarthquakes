@@ -4,12 +4,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Set;
 import java.util.TreeMap;
-import java.util.stream.Collectors;
 
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
@@ -23,7 +20,7 @@ public class ReadJsonFile {
 	TreeMap<Coordinates, String> coordinatesNamesMapWithoutDuplicates = new TreeMap<>();
 
 	@SuppressWarnings("unchecked")
-	public Map<Coordinates, String> readJSonAndConvertToJavaObjects() throws IOException, JsonParseException {
+	public TreeMap<Coordinates, String> readJSonAndConvertToJavaObjects() throws IOException, JsonParseException {
 		
 		ObjectMapper om = new ObjectMapper();				
 		om.configure(org.codehaus.jackson.map.DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false); //ignore fields that are not formatted properly
