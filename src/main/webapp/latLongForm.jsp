@@ -53,5 +53,6 @@
 		</select>
 	</fieldset>
 	<br />
+	<button type="reset" class="btn btn-warning my-4 btn-block">Reset</button>
 	<button type="submit" class="btn btn-info my-4 btn-block">Submit</button>
 </form>

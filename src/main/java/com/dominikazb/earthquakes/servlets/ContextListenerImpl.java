@@ -14,17 +14,17 @@ public class ContextListenerImpl implements ServletContextListener {
 	public void contextInitialized(ServletContextEvent sce) {
 		ServletContext sc = sce.getServletContext();
 		ReadJsonFile readJson = new ReadJsonFile();
-		System.out.println("This is only submitted once, right?");
 		try {
 			TreeMap<Coordinates,String> coordinatesNamesMap = readJson.readJSonAndConvertToJavaObjects();
 			sc.setAttribute("coordinatesNamesMap", coordinatesNamesMap);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
 	@Override
-	public void contextDestroyed(ServletContextEvent sce) {}
+	public void contextDestroyed(ServletContextEvent sce) {
+
+	}
 	
 }
