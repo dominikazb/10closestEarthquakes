@@ -53,14 +53,13 @@
 		<h4>Longitude</h4>
 		<p class="lead">The angular distance of a place east or west of
 			the Greenwich meridian, or west of the standard meridian of a
-			celestial object, usually expressed in degrees and minutes. Typical
-			Values : [-180.0, 180.0]</p>
+			celestial object, usually expressed in degrees and minutes.</p>
 
 
 		<h4>Latitude</h4>
 		<p class="lead">The angular distance of a place north or south of
 			the earth's equator, or of the equator of a celestial object, usually
-			expressed in degrees and minutes. Typical Values : [-90.0, 90.0]</p>
+			expressed in degrees and minutes.</p>
 		<hr>
 		
 
