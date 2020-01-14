@@ -14,12 +14,11 @@
 
 
 <div class="container">
-	<div class="jumbotron">
-		<div class="row vertical-align">
-			<div class="col-xs-6">
+	<div class="row">
+		<div class="col-lg-6">
 				<jsp:include page="latLongForm.jsp" />
 			</div>
-			<div class="col-xs-6">
+			<div class="col-lg-6">
 				<table class="table table-striped">
 					<thead>
 						<tr>
@@ -28,7 +27,6 @@
 
 						</tr>
 					</thead>
-
 
 					<tbody>
 						<c:forEach items="${first10resultsFromTheList}" var="entry">
@@ -43,6 +41,6 @@
 			</div>
 		</div>
 	</div>
-</div>
+
 
 <%@ include file="common/footer.jspf"%>
