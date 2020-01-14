@@ -28,6 +28,6 @@ public class HarvesineFormula {
 		double radiusOfTheEarth = 6371;
 		double c = 2 * Math.asin(Math.sqrt(a));
 		return radiusOfTheEarth * c;
-	}//end of public double haversine()
+	}
 
-}//end of public class HarvesineFormula
+}
