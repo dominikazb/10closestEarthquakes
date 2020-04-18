@@ -7,20 +7,20 @@ Application: https://tenclosestearthquakes.herokuapp.com
 
 <b>Screenshots:</b>
 
-<img src="https://github.com/dominikazb/10closestEarthquakes/blob/master/screens/tenclosestearthquakes1.jpg" border=1 bordercolor="black">
+<img src="https://github.com/dominikazb/10closestEarthquakes/blob/master/screens/tenclosestearthquakes1.jpg">
 <br>
 
-<img src="https://github.com/dominikazb/10closestEarthquakes/blob/master/screens/tenclosestearthquakes2.jpg" border="1">
+<img src="https://github.com/dominikazb/10closestEarthquakes/blob/master/screens/tenclosestearthquakes2.jpg">
 <br>
 
-<img src="https://github.com/dominikazb/10closestEarthquakes/blob/master/screens/tenclosestearthquakes3.jpg" border="1">
+<img src="https://github.com/dominikazb/10closestEarthquakes/blob/master/screens/tenclosestearthquakes3.jpg">
 <br>
 
-<img src="https://github.com/dominikazb/10closestEarthquakes/blob/master/screens/tenclosestearthquakes4.jpg" border="1">
+<img src="https://github.com/dominikazb/10closestEarthquakes/blob/master/screens/tenclosestearthquakes4.jpg">
 
 
 ---------------
-Created in January 2020
+Created January 2020
 
 
 
