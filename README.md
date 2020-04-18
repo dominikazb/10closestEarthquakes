@@ -7,7 +7,7 @@ Application: https://tenclosestearthquakes.herokuapp.com
 
 <b>Screenshots:</b>
 
-<img src="https://github.com/dominikazb/10closestEarthquakes/blob/master/screens/tenclosestearthquakes1.jpg" border="1">
+<img src="https://github.com/dominikazb/10closestEarthquakes/blob/master/screens/tenclosestearthquakes1.jpg" border=1 bordercolor="black">
 <br>
 
 <img src="https://github.com/dominikazb/10closestEarthquakes/blob/master/screens/tenclosestearthquakes2.jpg" border="1">
