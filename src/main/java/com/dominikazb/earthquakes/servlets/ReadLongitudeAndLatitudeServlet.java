@@ -18,6 +18,8 @@ public class ReadLongitudeAndLatitudeServlet extends HttpServlet {
         HttpSession session = request.getSession(); 
 		String latitudeOfSearchedCityString = request.getParameter("latitudeOfSearchedCity");
 		String longitudeOfSearchedCityString = request.getParameter("longitudeOfSearchedCity");
+		String selectedCity = request.getParameter("selectedCity");
+		session.setAttribute("selectedCity", selectedCity);
 		session.setAttribute("latitudeOfSearchedCityString", latitudeOfSearchedCityString);
 		session.setAttribute("longitudeOfSearchedCityString", longitudeOfSearchedCityString);
         response.sendRedirect("list");

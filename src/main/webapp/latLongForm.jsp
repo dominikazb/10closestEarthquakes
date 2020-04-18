@@ -19,10 +19,10 @@
 
 	<fieldset class="form-group">
 		<label>Select a city</label> <select class="form-control"
-			id="countrySelect">
+			id="countrySelect" onchange="javascript:getSelectedLabel(this);">
 			<option>None</option>
-			<option value="35.084385_-106.650421">Albuquerque</option>
-			<option value="33.748997_-84.387985">Atlanta</option>
+			<option name="Albuquerque" value="35.084385_-106.650421">Albuquerque</option>
+			<option name="Atlanta" value="33.748997_-84.387985">Atlanta</option>
 			<option value="41.878113_-87.629799">Chicago</option>
 			<option value="32.776665_-96.796989">Dallas</option>
 			<option value="39.739235_-104.990250">Denver</option>
@@ -51,6 +51,15 @@
 			<option value="32.222607_-110.974709">Tucson</option>
 			<option value="38.907192_-77.036873">Washington D.C.</option>
 		</select>
+		
+		<script>
+		function getSelectedLabel(sel) {
+		    document.getElementById("selectedCity").value = sel.options[sel.selectedIndex].text;
+		    document.form1.submit();
+		}
+		</script>
+		
+		
 	</fieldset>
 	<br />
 	<button type="reset" class="btn btn-warning my-4 btn-block">Reset</button>

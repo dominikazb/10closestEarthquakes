@@ -19,6 +19,7 @@
 				<jsp:include page="latLongForm.jsp" />
 			</div>
 			<div class="col-lg-6">
+			<h3>Selected city: ${selectedCity}</h3>
 				<table class="table table-striped">
 					<thead>
 						<tr>
